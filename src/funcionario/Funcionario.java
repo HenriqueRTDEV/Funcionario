@@ -7,14 +7,19 @@ public class Funcionario {
 
     public static void main(String[] args) {
         
-        //Cadastrando Funcionarios
+//Cadastrando Funcionarios
         Cadastrando f1 = new Cadastrando(1, "henrique", 2500);
         Cadastrando f2 = new Cadastrando (2, "guilherme", 2700);
         Cadastrando f3 = new Cadastrando (3, "aldemir", 3700);
         Cadastrando f4 = new Cadastrando (4, "lauren", 5700);
      
                 
-                //Descobrindo quem tem o maior Salario dos funcionarios
+               
+//somando o salario anual do funcionario:
+        System.out.println("o salario anual do funcionario é este aqui" + f1.SomandoSalarioAnual());
+        
+        
+//Descobrindo quem tem o maior Salario dos funcionarios
                 List<Cadastrando> Lista = new ArrayList<>();
                 Lista.add(f1);
                 Lista.add(f2);
@@ -33,7 +38,6 @@ public class Funcionario {
                 
 
 
-
 //Fazendo a media dos salarios
                 double somaSalarios = 0.0;
                 for (Cadastrando func : Lista) {
@@ -43,6 +47,16 @@ public class Funcionario {
         double dividindo = somaSalarios / Lista.size();
         
         System.out.println("a media dos salarios e esta: " + dividindo);
-        //               
-  }
+        
+        
+ // Dando um aumento de 10% para todos os funcionari           
+            for (Cadastrando func : Lista) {
+                func.aumentarSalario(10);
+            }
+            
+// mostrando na tela este aumento!
+            for ( Cadastrando func :Lista) {
+                System.out.println(func.getNome() + "agora ganha R$ " + func.getSalario());
+            }          
+}
 }

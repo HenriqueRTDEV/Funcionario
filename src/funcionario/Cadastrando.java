@@ -1,6 +1,5 @@
 package funcionario;
 
-
 public class Cadastrando {
 
     private int id;
@@ -34,4 +33,7 @@ public class Cadastrando {
         double aumento = this.salario *(percentual / 100.0);
         this.salario = this.salario + aumento;
     };
+    
+    
+   
 }
